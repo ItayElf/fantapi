@@ -7,7 +7,9 @@ import 'package:shelf_router/shelf_router.dart';
 import 'subtypes/subtypes_routes.dart';
 
 // Configure routes.
-final _router = Router()..get("/subtypes/races", racesHandler);
+final _router = Router()
+  ..get("/subtypes/races", racesHandler)
+  ..get("/subtypes/companions", companionsHandler);
 
 void main(List<String> args) async {
   // Use any available host or container IP (usually `0.0.0.0`).

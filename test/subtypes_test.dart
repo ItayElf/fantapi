@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:randpg/entities/companions.dart';
 import 'package:randpg/entities/races.dart';
 import 'package:shelf/shelf.dart';
 import 'package:test/test.dart';
@@ -20,6 +21,22 @@ void main() {
         expect(() => RaceManager().getType(element), returnsNormally);
       }
       expect(jsonResponse.length, equals(RaceManager().activeTypes.length));
+    });
+
+    test('Test get companions', () async {
+      final request =
+          Request('GET', Uri.parse('http://localhost/subtypes/companions'));
+      final response = companionsHandler(request);
+      expect(response.statusCode, equals(200));
+      expect(response.headers['Content-Type'], equals('application/json'));
+
+      final responseBody = await response.readAsString();
+      final jsonResponse = jsonDecode(responseBody) as List;
+      for (var element in jsonResponse) {
+        expect(() => CompanionManager().getType(element), returnsNormally);
+      }
+      expect(
+          jsonResponse.length, equals(CompanionManager().activeTypes.length));
     });
   });
 }

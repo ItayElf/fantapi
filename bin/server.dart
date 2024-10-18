@@ -10,7 +10,14 @@ import 'subtypes/subtypes_routes.dart';
 final _router = Router()
   ..get("/subtypes/races", racesHandler)
   ..get("/subtypes/companions", companionsHandler)
-  ..get("/subtypes/deities", deitiesHandler);
+  ..get("/subtypes/deities", deitiesHandler)
+  ..get("/subtypes/governmentTypes", governmentTypeHandler)
+  ..get("/subtypes/guilds", guildHandler)
+  ..get("/subtypes/holidays", holidayHandler)
+  ..get("/subtypes/landscapes", landscapeHandler)
+  ..get("/subtypes/locations", locationHandler)
+  ..get("/subtypes/settlements", settlementHandler)
+  ..get("/subtypes/worldMapSettings", worldMapSettingsHandler);
 
 void main(List<String> args) async {
   // Use any available host or container IP (usually `0.0.0.0`).

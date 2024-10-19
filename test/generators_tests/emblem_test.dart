@@ -1,7 +1,7 @@
 import 'package:shelf/shelf.dart';
 import 'package:test/test.dart';
 
-import '../../bin/generators/emblem_routes/emblems.dart';
+import '../../bin/generators/emblems_routes/emblems.dart';
 
 void main() {
   group("Emblem Generation Tests", () {

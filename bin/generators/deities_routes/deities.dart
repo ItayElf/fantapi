@@ -84,6 +84,6 @@ Response generateDeityHandler(Request request) {
       headers: {'Content-Type': 'application/json'},
     );
   } catch (e) {
-    return Response(400, body: 'Error generating companion: ${e.toString()}');
+    return Response(400, body: 'Error generating deity: ${e.toString()}');
   }
 }

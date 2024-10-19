@@ -5,6 +5,7 @@ import 'package:shelf/shelf_io.dart';
 import 'package:shelf_router/shelf_router.dart';
 
 import 'subtypes/subtypes_routes.dart';
+import 'generators/companion_routes/companion.dart';
 
 // Configure routes.
 final _router = Router()
@@ -17,13 +18,12 @@ final _router = Router()
   ..get("/subtypes/landscapes", landscapeHandler)
   ..get("/subtypes/locations", locationHandler)
   ..get("/subtypes/settlements", settlementHandler)
-  ..get("/subtypes/worldMapSettings", worldMapSettingsHandler);
+  ..get("/subtypes/worldMapSettings", worldMapSettingsHandler)
+  ..get("/generate/companion", generateCompanionHandler);
 
 void main(List<String> args) async {
-  // Use any available host or container IP (usually `0.0.0.0`).
   final ip = InternetAddress.anyIPv4;
 
-  // Configure a pipeline that logs requests.
   final handler =
       Pipeline().addMiddleware(logRequests()).addHandler(_router.call);
 

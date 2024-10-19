@@ -10,6 +10,7 @@ import 'generators/companion_routes/companion_names.dart';
 import 'generators/deities_routes/deities.dart';
 import 'generators/emblems_routes/emblems.dart';
 import 'generators/guilds_routes/guilds.dart';
+import 'generators/holidays_routes/holidays.dart';
 
 // Configure routes.
 final _router = Router()
@@ -29,7 +30,8 @@ final _router = Router()
   ..get("/generate/companionNames", generateCompanionNamesHandler)
   ..get("/generate/deity", generateDeityHandler)
   ..get("/generate/emblem", generateEmblemHandler)
-  ..get("/generate/guild", generateGuildHandler);
+  ..get("/generate/guild", generateGuildHandler)
+  ..get("/generate/holiday", generateHolidayHandler);
 
 void main(List<String> args) async {
   final ip = InternetAddress.anyIPv4;

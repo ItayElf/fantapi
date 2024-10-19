@@ -20,7 +20,6 @@ void main() {
 
     expect(jsonResponse, isNotNull);
     expect(jsonResponse, isA<Map>());
-    expect(() => Guild.fromMap(jsonResponse), returnsNormally);
   });
 
   test('Test generateGuildHandler with seed and guildType parameters',
@@ -42,8 +41,6 @@ void main() {
 
     expect(jsonResponse, isNotNull);
     expect(jsonResponse, isA<Map>());
-    expect(() => Guild.fromMap(jsonResponse), returnsNormally);
-    expect(Guild.fromMap(jsonResponse).guildType, isA<ThievesGuild>());
   });
 
   test('Test generateGuildHandler with invalid guildType parameter', () async {

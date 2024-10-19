@@ -6,6 +6,7 @@ import 'package:shelf_router/shelf_router.dart';
 
 import 'subtypes/subtypes_routes.dart';
 import 'generators/companion_routes/companion.dart';
+import 'generators/companion_routes/companion_names.dart';
 
 // Configure routes.
 final _router = Router()
@@ -19,7 +20,8 @@ final _router = Router()
   ..get("/subtypes/locations", locationHandler)
   ..get("/subtypes/settlements", settlementHandler)
   ..get("/subtypes/worldMapSettings", worldMapSettingsHandler)
-  ..get("/generate/companion", generateCompanionHandler);
+  ..get("/generate/companion", generateCompanionHandler)
+  ..get("/generate/companionNames", generateCompanionNamesHandler);
 
 void main(List<String> args) async {
   final ip = InternetAddress.anyIPv4;
